@@ -1,0 +1,6 @@
+*.pem
+__pycache__/
+*.log
+*.tfstate
+*.tfstate.*
+.terraform/
