@@ -1,6 +1,9 @@
 *.pem
 __pycache__/
+*.pyc
 *.log
+nohup.out
+.env
 *.tfstate
 *.tfstate.*
 .terraform/
