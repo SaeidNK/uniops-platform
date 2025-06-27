@@ -1,5 +1,16 @@
 from flask import Flask, request, jsonify
 import requests
+import logging
+import psutil
+from flask import Flask, request, jsonify
+
+# Logging setup
+logging.basicConfig(
+    filename="uniops_chatbot.log",
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(message)s"
+)
+
 
 app = Flask(__name__)
 PROMETHEUS = "http://localhost:9090"
@@ -7,11 +18,15 @@ PROMETHEUS = "http://localhost:9090"
 @app.route("/")
 def index():
     return "UniOps Chatbot is running!"
-
+@app.route("/cpu")
+def cpu_usage():
+    return {"cpu_percent": psutil.cpu_percent(interval=1)}
 @app.route("/ask", methods=["POST"])
 def ask():
     data = request.json
     query = data.get("query", "").lower()
+
+    logging.info(f"Received query: {query}")
 
     if "/cpu" in query:
         return jsonify(cpu_usage())
@@ -37,6 +52,7 @@ def cpu_usage():
         value = float(r["data"]["result"][0]["value"][1])
         return {"response": f"Current CPU usage is {value:.2f}%"}
     except:
+        logging.exception("An error occurred while processing query")
         return {"response": "CPU data not available."}
 
 def disk_status():
@@ -53,6 +69,7 @@ def disk_status():
             response.append(f"{fs}: {val:.2f} GB free")
         return {"response": "\n".join(response)}
     except:
+        logging.exception("An error occurred while processing query")
         return {"response": "Disk data fetch error."}
 
 def memory_status():
@@ -65,7 +82,8 @@ def memory_status():
         percent = (used / total) * 100
         return {"response": f"Memory usage: {percent:.2f}% ({used/1e9:.2f}GB used of {total/1e9:.2f}GB)"}
     except:
-        return {"response": "Memory data fetch error."}
+       logging.exception("An error occurred while processing query")
+       return {"response": "Memory data fetch error."}
 
 def uptime_status():
     try:
@@ -75,6 +93,7 @@ def uptime_status():
         hours = seconds / 3600
         return {"response": f"System uptime: {hours:.1f} hours"}
     except:
+        logging.exception("An error occurred while processing query")
         return {"response": "Uptime data not available."}
 
 if __name__ == "__main__":
