@@ -19,12 +19,19 @@ UniOps is a cloud-based infrastructure project designed to showcase hands-on ski
 ---
 
 ## 📦 Project Structure
-uniops-platform/  
-├── infra/  # Terraform files  
-├── ansible/  # Ansible playbook and inventory  
-├── keyPair.pem  # (excluded via .gitignore)  
-├── .gitignore  
-├── README.md  
+
+uniops-platform/
+├── infra/                 # Terraform files
+├── ansible/               # Ansible playbooks and inventory
+├── backend/               # Flask-based Chatbot backend
+│   ├── app.py             # Chatbot logic and endpoints
+│   └── requirements.txt   # Python dependencies
+├── frontend/              # HTML/JS Chatbot UI
+│   ├── index.html
+│   └── script.js
+├── .github/workflows/     # GitHub Actions CI
+├── .gitignore
+├── README.md
 
 ---
 
