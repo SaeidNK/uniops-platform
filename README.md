@@ -58,7 +58,7 @@ uniops-platform/
 
 - ![Grafana Screenshot](screenshot/Grafana.png)
 - ![Chatbot Screenshot](screenshot/frontend.png)
-- ![Ansible Screenshot](screenshot/Ansibe.png)
+- ![Ansible Screenshot](screenshot/Ansible.png)
 - ![Terraform Screenshot 1](screenshot/Terraform1.png)
 - ![Terraform Screenshot 2](screenshot/Terraform2.png)
 
