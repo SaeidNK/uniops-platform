@@ -19,22 +19,22 @@ UniOps is a cloud-based infrastructure project designed to showcase hands-on ski
 ---
 
 ## 📦 Project Structure
-uniops-platform/
-├── infra/ # Terraform files
-├── ansible/ # Ansible playbook and inventory
-├── keyPair.pem # (excluded via .gitignore)
-├── .gitignore
-├── README.md
+uniops-platform/  
+├── infra/  # Terraform files  
+├── ansible/  # Ansible playbook and inventory  
+├── keyPair.pem  # (excluded via .gitignore)  
+├── .gitignore  
+├── README.md  
 
 ---
 
 ## ⚙️ Phase Overview
 
-- ✅ **Phase 1**: GitHub Repo Setup
-- ✅ **Phase 2**: EC2 Provisioning with Terraform
-- ✅ **Phase 3**: Ansible Setup (Python, Nginx, Node Exporter)
-- 🔜 **Phase 4**: Prometheus & Grafana Monitoring Dashboards
-- 🔄 **Phase 5**: Support Automation (Chatbot, Alerting, CI/CD)
+- ✅ **Phase 1**: GitHub Repo Setup  
+- ✅ **Phase 2**: EC2 Provisioning with Terraform  
+- ✅ **Phase 3**: Ansible Setup (Python, Nginx, Node Exporter)  
+- 🔜 **Phase 4**: Prometheus & Grafana Monitoring Dashboards  
+- 🔄 **Phase 5**: Support Automation (Chatbot, Alerting, CI/CD)  
 
 ---
 
@@ -48,19 +48,17 @@ uniops-platform/
 
 ## 📸 Screenshots (Optional)
 
-Add:
-- Diagram of architecture
-- Terminal output of `terraform apply` and `ansible-playbook`
-- Grafana dashboard (Phase 4)
+Add:  
+- Diagram of architecture  
+- Terminal output of `terraform apply` and `ansible-playbook`  
+- Grafana dashboard (Phase 4)  
 
 ---
 
 ## 🧠 Why This Project?
 
-This project was built to demonstrate:
-- End-to-end cloud automation
-- DevOps best practices
-- Scalable infrastructure deployment
+This project was built to demonstrate:  
+- End-to-end cloud automation  
+- DevOps best practices  
+- Scalable infrastructure deployment  
 - Monitoring and visibility for real-world systems
-
-
